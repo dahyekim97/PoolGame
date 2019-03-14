@@ -1,50 +1,25 @@
 import pygame
 import sys
-
-# color
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-
-# screen constants
-screenWidth = 1000
-screenHeight = 500
-
-# table constants
-tableWidth = 900
-tableHeight = 400
-tableLeft = 50
-tableTop = 50
-tableColor = (18, 104, 54)
-tableFrameThickness = 30
-frameColor = (107, 75, 59)
-
-# hole constants
-holeRadius = 20
-holeTopPosition = 50
-holeBottomPosition = screenHeight - 50
-initialHorizontalPosition = 50
-
-# 16 balls initial position
-balls = [(), (), (), (), (), (), (), (), (), (), (), (), (), (), (), ()]
-
+import config
 
 def init():
     global screen, clock
     pygame.init()
-    screen = pygame.display.set_mode((screenWidth, screenHeight))
+    screen = pygame.display.set_mode((config.screen.Width, config.screen.Height))
     pygame.display.set_caption('LET\'S PLAY POOL!')
     clock = pygame.time.Clock()
 
 
 def drawHoles():
-    horizontalPosition = initialHorizontalPosition
+    horizontalPosition = config.hole.InitialHorizontalPosition
 
     for i in range(0, 3):
-        topHolesPosition = (holeTopPosition, holeTopPosition - 10)[i == 1]
-        bottomHolesPosition = (holeBottomPosition, holeBottomPosition + 10)[i == 1]
-        pygame.draw.circle(screen, BLACK, (horizontalPosition, topHolesPosition), holeRadius)
-        pygame.draw.circle(screen, BLACK, (horizontalPosition, bottomHolesPosition), holeRadius)
-        horizontalPosition += (int)(tableWidth / 2)
+        # middle whole is in different position from other two holes in the same row
+        topHolesPosition = (config.hole.TopPosition, config.hole.TopPosition - 10)[i == 1]
+        bottomHolesPosition = (config.hole.BottomPosition, config.hole.BottomPosition + 10)[i == 1]
+        pygame.draw.circle(screen, config.color.BLACK, (horizontalPosition, topHolesPosition), config.hole.Radius)
+        pygame.draw.circle(screen, config.color.BLACK, (horizontalPosition, bottomHolesPosition), config.hole.Radius)
+        horizontalPosition += (int)(config.table.Width / 2)
 
 
 def run():
@@ -59,10 +34,10 @@ def run():
                 pygame.quit()
                 sys.exit()
 
-        screen.fill(WHITE)
+        screen.fill(config.color.WHITE)
 
         tableImage = pygame.image.load("table.jpg")
-        tableImage = pygame.transform.scale(tableImage, (screenWidth, screenHeight))
+        tableImage = pygame.transform.scale(tableImage, (config.screen.Width, config.screen.Height))
         tableImageRect = tableImage.get_rect()
         screen.blit(tableImage, tableImageRect)
         pygame.display.flip()
