@@ -23,7 +23,7 @@ class Hole(pygame.sprite.Sprite):
 
 def init(self):
     self.holes = pygame.sprite.Group()
-    self.allSprites = pygame.sprite.OrderedUpdates()
+    self.tableSprites = pygame.sprite.OrderedUpdates()
 
 
 def initializeHoles(self):
