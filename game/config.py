@@ -17,15 +17,16 @@ class table:
 # hole constants
 class hole:
     Radius = 20
+    Diameter = 40
     TopPosition = 50
     BottomPosition = screen.Height - 50
     InitialHorizontalPosition = 50
 
 # 16 balls initial position
 class ball:
-    balls = [(), (), (), (), (), (), (), (), (), (), (), (), (), (), (), ()]
+    balls = []
 
 # color
 class color:
-    WHITE = (255, 255, 255)
-    BLACK = (0, 0, 0)
+    White = (255, 255, 255)
+    Black = (0, 0, 0)
