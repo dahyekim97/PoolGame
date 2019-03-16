@@ -3,6 +3,7 @@ class screen:
     Width = 1000
     Height = 500
 
+
 # table constants
 class table:
     Width = 900
@@ -10,9 +11,11 @@ class table:
     Left = 50
     Top = 50
     Color = (18, 104, 54)
+
     class Frame:
         Thickness = 30
         Color = (107, 75, 59)
+
 
 # hole constants
 class hole:
@@ -22,9 +25,11 @@ class hole:
     BottomPosition = screen.Height - 50
     InitialHorizontalPosition = 50
 
+
 # 16 balls initial position
 class ball:
     balls = []
+
 
 # color
 class color:

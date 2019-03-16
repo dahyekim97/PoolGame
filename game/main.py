@@ -3,6 +3,7 @@ import sys
 import config
 import table
 
+
 class Game:
     def __init__(self):
         global clock
@@ -17,6 +18,7 @@ class Game:
         tableImage = pygame.transform.scale(tableImage, (config.screen.Width, config.screen.Height))
         self.background = tableImage
         self.screen.blit(self.background, (0, 0))
+
 
 def init():
     global game
@@ -41,6 +43,7 @@ def run():
         pygame.display.update()
 
     pygame.quit()
+
 
 init()
 run()

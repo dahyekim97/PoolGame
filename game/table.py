@@ -1,24 +1,25 @@
 import pygame
 import config
 
+
 class Hole(pygame.sprite.Sprite):
     # Constructor. Pass in the color of the block,
     # and its x and y position
     def __init__(self, position):
-       # Call the parent class (Sprite) constructor
-       pygame.sprite.Sprite.__init__(self)
+        # Call the parent class (Sprite) constructor
+        pygame.sprite.Sprite.__init__(self)
 
-       # Create an image of the block, and fill it with transparent background.
-       # This could also be an image loaded from the disk.
-       image = pygame.Surface([config.hole.Diameter, config.hole.Diameter], pygame.SRCALPHA, 32)
-       self.image = image.convert_alpha()
+        # Create an image of the block, and fill it with transparent background.
+        # This could also be an image loaded from the disk.
+        image = pygame.Surface([config.hole.Diameter, config.hole.Diameter], pygame.SRCALPHA, 32)
+        self.image = image.convert_alpha()
 
-       pygame.draw.circle(self.image, (0, 0, 0),
+        pygame.draw.circle(self.image, (0, 0, 0),
                           (config.hole.Radius, config.hole.Radius), config.hole.Radius, 0)
-       # Fetch the rectangle object that has the dimensions of the image
-       # Update the position of this object by setting the values of rect.x and rect.y
-       self.rect = self.image.get_rect()
-       self.rect.center = position
+        # Fetch the rectangle object that has the dimensions of the image
+        # Update the position of this object by setting the values of rect.x and rect.y
+        self.rect = self.image.get_rect()
+        self.rect.center = position
 
 
 def init(self):
