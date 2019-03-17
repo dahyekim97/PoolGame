@@ -1,37 +1,31 @@
 # screen constants
-class screen:
-    Width = 1000
-    Height = 500
-
+screen = {
+    'width': 1000,
+    'height': 500,
+}
 
 # table constants
-class table:
-    Width = 900
-    Height = 400
-    Left = 50
-    Top = 50
-    Color = (18, 104, 54)
-
-    class Frame:
-        Thickness = 30
-        Color = (107, 75, 59)
+table = {
+    'width': 900,
+    'height': 400,
+    'margin': 50,
+}
 
 
 # hole constants
-class hole:
-    Radius = 20
-    Diameter = 40
-    TopPosition = 50
-    BottomPosition = screen.Height - 50
-    InitialHorizontalPosition = 50
+hole = {
+    'radius': 20,
+}
 
 
-# 16 balls initial position
-class ball:
-    balls = []
+# ball initial position
+ball = {
+    'radius': 20,
+}
 
 
 # color
-class color:
-    White = (255, 255, 255)
-    Black = (0, 0, 0)
+color = {
+    'white': (255, 255, 255),
+    'black': (0, 0, 0),
+}
